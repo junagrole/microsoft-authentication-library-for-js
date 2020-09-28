@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { IPublicClientApplication, AccountInfo } from '@azure/msal-browser';
+import * as React from "react";
+import { IPublicClientApplication, AccountInfo } from "@azure/msal-browser";
 
 type MsalState = {
     accounts: AccountInfo[];
@@ -24,14 +24,13 @@ const defaultMsalContext: IMsalContext = {
             return Promise.reject();
         },
         getAllAccounts: () => {
-            debugger;
             return [];
         },
         getAccountByUsername: () => {
-            // TODO: getAccountByUsername should have a return type of `AccountInfo | null`
-            // Also should prevent possible null reference exception if no account matches the username
-            // https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/src/app/PublicClientApplication.ts#L466
-            return (null as unknown) as AccountInfo;
+            return null;
+        },
+        getAccountByHomeId: () => {
+            return null;
         },
         handleRedirectPromise: () => {
             return Promise.reject(null);

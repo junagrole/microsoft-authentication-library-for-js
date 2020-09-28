@@ -25,7 +25,11 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
+    "lint": "cd ../../ && npm run lint:react",
+    "lint:fix": "npm run lint -- -- --fix",
+    "build:all": "npm run build:common && npm run build:browser && npm run build",
+    "build:common": "cd ../msal-common && npm run build",
+    "build:browser": "cd ../msal-browser && npm run build",
     "prepare": "tsdx build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -33,17 +37,6 @@
   "peerDependencies": {
     "@azure/msal-browser": "^2.2.0",
     "react": ">=16"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
-  },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "doubleQuote": false,
-    "trailingComma": "es5"
   },
   "module": "dist/msal-react.esm.js",
   "devDependencies": {

@@ -35,6 +35,7 @@
     "lint:angular": "eslint lib/msal-angular/src --ext .ts",
     "lint:angularjs": "eslint lib/msal-angularjs/lib --ext .js",
     "lint:browser": "eslint lib/msal-browser/src --ext .ts",
+    "lint:react": "eslint lib/msal-react/src --ext .ts",
     "lint:common": "eslint lib/msal-common/src --ext .ts",
     "lint:core": "eslint lib/msal-core/src --ext .ts",
     "lint:node": "eslint lib/msal-node/src --ext .ts",
